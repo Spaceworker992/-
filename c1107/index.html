@@ -11,7 +11,7 @@ p,li{color:var(--sub)}b{color:var(--tx)}
 img,video{width:100%;height:auto;border-radius:8px;display:block}
 .row{display:grid;grid-template-columns:2fr 1fr;gap:12px;align-items:start}
 .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:10px}.gs{grid-template-columns:repeat(auto-fill,minmax(150px,1fr))}
 .grid figure{margin:0}.grid figcaption{font-size:.8rem;color:var(--sub);margin-top:4px}
 .cap{font-size:.9rem;color:var(--sub);margin:.4em 0 0}
 details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold}
@@ -40,8 +40,10 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <p class="cap">出典：DaiGo の心理学の知見（D-Labo）。どれも一般的な心理学の知見で、YouTube の再生数で効果を確かめたものではありません。</p>
 <details><summary>白フチあり／なしの比較</summary>
 <div class="two" style="margin-top:10px"><figure style="margin:0"><img src="yoko_fuchi.jpg" alt=""><p class="cap">白フチあり</p></figure><figure style="margin:0"><img src="yoko_nofuchi.jpg" alt=""><p class="cap">白フチなし</p></figure></div></details>
-<details><summary>ほかの9案も見る（すべて黒ベース）</summary>
-<div class="grid" style="margin-top:10px" id="g"></div></details>
+<h3 style="margin:1.4em 0 .4em">横動画：10案</h3>
+<div class="grid" id="gy"></div>
+<h3 style="margin:1.4em 0 .4em">ショート：10案</h3>
+<div class="grid gs" id="gs"></div>
 </div>
 
 <h2>2. 右下の案内（X・note・ホームページ）</h2>
@@ -66,8 +68,7 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 </div>
 </main>
 <script>
-const P=[["D02","黒×金・二重枠"],["D03","紺×水色"],["D04","白×黄の2色だけ"],["D05","紺×金＋緑の案内"],["D06","黒×黄の左帯"],["D07","飾りなし・太字"],["D08","謎かけの字幕"],["D09","Colne を大きく"],["D10","続きは note"]];
-const g=document.getElementById('g');
-for(const [c,n] of P){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="y_${c}.jpg" alt=""><figcaption>${c} ${n}</figcaption></figure>`)}
+const P=[["D01","紺×金（おすすめ）","紺は親しみ、黒は強さ。黄色の字は暗い地で読みやすい"],["D02","黒×金・二重枠","黒は権威の印象。赤は使わない"],["D03","紺×水色","青は集中を高め、落ち着かせる"],["D04","白×黄の2色だけ","色の数を2つほどに減らすと目に入りやすい"],["D05","紺×金＋緑の案内","登録の案内は緑が向く"],["D06","黒×黄の左帯","黄色は話しかけやすさの色"],["D07","飾りなし・太字","読みやすい字ほど正しいと受け取られやすい"],["D08","謎かけの字幕","？で終わる見出しは反応が増える"],["D09","Colne を大きく","顔があると注目されやすい"],["D10","続きは note","途中で終わった話は続きが気になる"]];
+for(const [k,id] of [["y","gy"],["s","gs"]]){const g=document.getElementById(id);for(const [c,n,w] of P){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="${k}_${c}.jpg" alt=""><figcaption><b>${c} ${n}</b><br>${k==="y"?w:""}</figcaption></figure>`)}}
 </script>
 </body></html>
