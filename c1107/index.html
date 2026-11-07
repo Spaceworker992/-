@@ -24,7 +24,9 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <li><b>スライドの配色</b>（横動画・ショート）</li>
 <li><b>右下の案内</b>（X・note・ホームページを切り替えて表示）：暗い版／明るい版</li>
 <li><b>背景のぼかし方</b>（冒頭と終わりはくっきり、本編はぼかす）</li>
+<li><b>BGM</b>（本編・冒頭・終わり・ショート）</li>
 </ol>
+<p class="cap">明るい（白い地の）スライドの案は <a href="#light" style="color:#f6b73c">こちら</a>（1の中）</p>
 
 <h2>1. スライドの配色</h2>
 <div class="card">
@@ -45,7 +47,7 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <h3 style="margin:1.4em 0 .4em">ショート：10案</h3>
 <p class="cap">ショートは背景のぼかしを横動画より2段階強くしています。</p>
 <div class="grid gs" id="gs"></div>
-<h3 style="margin:1.8em 0 .4em">明るい案（白い地のスライド）</h3>
+<h3 id="light" style="margin:1.8em 0 .4em">明るい案（白い地のスライド）</h3>
 <p class="cap">前に作った配色のうち、白い地の15案です。並びと右下の案内（明るい版）は、上の黒ベースの案と同じにしています。番号は前の見本と同じです。05（青い枠・水色の蛍光ペン）は、前回おすすめした案です。赤を多く使う案（01・10・12）は、赤で安っぽく見えやすいという知見があります（D-Labo）。</p>
 <h4 style="margin:1em 0 .3em">横動画</h4>
 <div class="grid" id="ly"></div>
@@ -73,6 +75,22 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <li>本編が終わり、案内に入る所から、約4秒かけてくっきりに戻します。案内はここから5秒ごとに切り替えます。</li>
 <li>この見本は、冒頭の45秒と最後の37秒をつないだものです。声は語尾まで発音されるように作り直し、速さは1.08倍です。</li>
 </ul>
+</div>
+
+<h2>4. BGM</h2>
+<div class="card">
+<p>歌のない、落ち着いたジャズ系の曲です。声と字幕の邪魔をしないよう、テンポはゆったり（約85）、音の数は少なめにしています。種類ごとに2曲ずつ作り、おすすめを1曲選びました。</p>
+<h3 style="margin:1em 0 .3em">本編（解説の下でくり返し流す・3分）</h3>
+<div class="two"><figure style="margin:0"><p class="cap"><span class="tag">おすすめ</span>本編 2：最後まで同じ音量で終わるので、くり返してもつなぎ目が目立ちにくい</p><audio controls preload="none" style="width:100%"><source src="bgm/hon2.m4a" type="audio/mp4"></audio></figure><figure style="margin:0"><p class="cap">本編 1：最後が小さくなって終わるため、くり返すと約3分ごとに音が途切れる</p><audio controls preload="none" style="width:100%"><source src="bgm/hon1.m4a" type="audio/mp4"></audio></figure></div>
+<p class="cap">つなぎ目の聞き比べ（3分の終わり→頭に戻る所、10秒＋10秒）</p>
+<div class="two"><figure style="margin:0"><p class="cap">本編 2 のつなぎ目</p><audio controls preload="none" style="width:100%"><source src="bgm/hon2_loop.m4a" type="audio/mp4"></audio></figure><figure style="margin:0"><p class="cap">本編 1 のつなぎ目</p><audio controls preload="none" style="width:100%"><source src="bgm/hon1_loop.m4a" type="audio/mp4"></audio></figure></div>
+<h3 style="margin:1em 0 .3em">冒頭（あいさつまで・12秒）</h3>
+<div class="two"><figure style="margin:0"><p class="cap"><span class="tag">おすすめ</span>冒頭 1：本編と同じくらいの音量</p><audio controls preload="none" style="width:100%"><source src="bgm/op1.m4a" type="audio/mp4"></audio></figure><figure style="margin:0"><p class="cap">冒頭 2：小さめで、後半は消えていく</p><audio controls preload="none" style="width:100%"><source src="bgm/op2.m4a" type="audio/mp4"></audio></figure></div>
+<h3 style="margin:1em 0 .3em">終わり（案内の所・20秒）</h3>
+<div class="two"><figure style="margin:0"><p class="cap"><span class="tag">おすすめ</span>終わり 1：最後に自然に小さくなって終わる</p><audio controls preload="none" style="width:100%"><source src="bgm/ed1.m4a" type="audio/mp4"></audio></figure><figure style="margin:0"><p class="cap">終わり 2：最後が急に切れる</p><audio controls preload="none" style="width:100%"><source src="bgm/ed2.m4a" type="audio/mp4"></audio></figure></div>
+<h3 style="margin:1em 0 .3em">ショート（45秒）</h3>
+<div class="two"><figure style="margin:0"><p class="cap"><span class="tag">おすすめ</span>ショート 1：音が割れる所がなく、最後は自然に終わる</p><audio controls preload="none" style="width:100%"><source src="bgm/sh1.m4a" type="audio/mp4"></audio></figure><figure style="margin:0"><p class="cap">ショート 2：大きい所で6回、音がわずかに割れる</p><audio controls preload="none" style="width:100%"><source src="bgm/sh2.m4a" type="audio/mp4"></audio></figure></div>
+<p class="cap">おすすめは、つなぎ目・終わり方・音量・音割れを測って選びました。曲の好みは聞いてお選びください。動画ではBGMを声より十分小さくし、声が出ている間は自動でさらに下げます。</p>
 </div>
 </main>
 <script>
