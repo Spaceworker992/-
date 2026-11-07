@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Colne 画面デザイン案（11/7）</title>
+<style>
+:root{--bg:#0f1424;--card:#171e33;--tx:#e9ecf3;--sub:#aab3c8;--acc:#f6b73c}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--tx);font-family:"Hiragino Sans","Noto Sans JP",sans-serif;line-height:1.7}
+main{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
+h1{font-size:1.5rem;margin:.2em 0}h2{font-size:1.2rem;margin:2.2em 0 .6em;padding-left:.6em;border-left:5px solid var(--acc)}
+p,li{color:var(--sub)}b{color:var(--tx)}
+.card{background:var(--card);border-radius:14px;padding:16px;margin:12px 0}
+img,video{width:100%;height:auto;border-radius:8px;display:block}
+.row{display:grid;grid-template-columns:2fr 1fr;gap:12px;align-items:start}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px}
+.grid figure{margin:0}.grid figcaption{font-size:.8rem;color:var(--sub);margin-top:4px}
+.cap{font-size:.9rem;color:var(--sub);margin:.4em 0 0}
+details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold}
+.tag{display:inline-block;background:var(--acc);color:#111;border-radius:6px;padding:0 8px;font-size:.85rem;font-weight:bold;margin-right:6px}
+@media(max-width:700px){.row,.two{grid-template-columns:1fr}}
+</style></head><body><main>
+<h1>Colne 画面デザイン案</h1>
+<p>ご確認いただきたいのは次の3点です。上から順に、おすすめを1つずつ載せています。</p>
+<ol>
+<li><b>スライドの配色</b>（横動画・ショート）</li>
+<li><b>右下の案内</b>（X・note・ホームページを切り替えて表示）：暗い版／明るい版</li>
+<li><b>背景のぼかし方</b>（冒頭と終わりはくっきり、本編はぼかす）</li>
+</ol>
+
+<h2>1. スライドの配色</h2>
+<div class="card">
+<p><span class="tag">おすすめ</span><b>紺×金（白フチあり）</b></p>
+<div class="row"><figure style="margin:0"><img src="rec_yoko.jpg" alt="横動画のおすすめ配色"><p class="cap">横動画</p></figure>
+<figure style="margin:0"><img src="rec_short.jpg" alt="ショートのおすすめ配色"><p class="cap">ショート</p></figure></div>
+<ul>
+<li>紺は親しみやすさ、黒は強さの印象を与えます。紺を基調に黒を合わせると、両方を出せるとされています。</li>
+<li>暗い地の上では、黄色の文字がいちばん読みやすい色です。</li>
+<li>読みやすい字ほど「内容が正しい」と受け取られやすい、という研究があります。そのため、太いゴシック体で統一しています。</li>
+<li>Colne の周りの白フチ：あると、黒いスーツが明るい背景に沈みません。</li>
+</ul>
+<p class="cap">出典：DaiGo の心理学の知見（D-Labo）。どれも一般的な心理学の知見で、YouTube の再生数で効果を確かめたものではありません。</p>
+<details><summary>白フチあり／なしの比較</summary>
+<div class="two" style="margin-top:10px"><figure style="margin:0"><img src="yoko_fuchi.jpg" alt=""><p class="cap">白フチあり</p></figure><figure style="margin:0"><img src="yoko_nofuchi.jpg" alt=""><p class="cap">白フチなし</p></figure></div></details>
+<details><summary>ほかの9案も見る（すべて黒ベース）</summary>
+<div class="grid" style="margin-top:10px" id="g"></div></details>
+</div>
+
+<h2>2. 右下の案内（X・note・ホームページ）</h2>
+<div class="card">
+<p>3つの案内を1つずつ切り替えて表示します。本番では30秒ごとに切り替えます（見本は4秒ごと）。</p>
+<div class="two">
+<figure style="margin:0"><video src="../m1107/cta_final_dark.mp4" controls muted loop playsinline preload="metadata"></video><p class="cap"><span class="tag">おすすめ</span>暗い版（黒×金）：スライドと同じ黒ベースなので、画面になじみます。</p></figure>
+<figure style="margin:0"><video src="../m1107/cta_final_light.mp4" controls muted loop playsinline preload="metadata"></video><p class="cap">明るい版：案内が目立ちますが、黒い画面の中で白い枠が浮きます。</p></figure>
+</div>
+<p class="cap">文言：X「いま Colne が気にしている相場は？」／note「ニュースの“続き”は note で」／ホームページ「Colne ってどんな人？」</p>
+</div>
+
+<h2>3. 背景のぼかし方</h2>
+<div class="card">
+<video src="blur_ref_v2.mp4" controls playsinline preload="metadata"></video>
+<ul>
+<li>背景は明るい朝焼けです。冒頭は「どうも、Colne です」まで、くっきり見せます。</li>
+<li>その後、約4秒かけて背景をぼかします。本編ではスライドが読みやすくなります。</li>
+<li>本編が終わり、案内に入る所から、約4秒かけてくっきりに戻します。案内はここから5秒ごとに切り替えます。</li>
+<li>この見本は、冒頭の45秒と最後の36秒をつないだものです。</li>
+</ul>
+</div>
+</main>
+<script>
+const P=[["D02","黒×金・二重枠"],["D03","紺×水色"],["D04","白×黄の2色だけ"],["D05","紺×金＋緑の案内"],["D06","黒×黄の左帯"],["D07","飾りなし・太字"],["D08","謎かけの字幕"],["D09","Colne を大きく"],["D10","続きは note"]];
+const g=document.getElementById('g');
+for(const [c,n] of P){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="y_${c}.jpg" alt=""><figcaption>${c} ${n}</figcaption></figure>`)}
+</script>
+</body></html>
