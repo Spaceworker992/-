@@ -16,7 +16,7 @@ img,video{width:100%;height:auto;border-radius:8px;display:block}
 .cap{font-size:.9rem;color:var(--sub);margin:.4em 0 0}
 details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold}
 .tag{display:inline-block;background:var(--acc);color:#111;border-radius:6px;padding:0 8px;font-size:.85rem;font-weight:bold;margin-right:6px}
-@media(max-width:700px){.row,.two{grid-template-columns:1fr}}
+@media(max-width:700px){.row,.two{grid-template-columns:1fr}}.pair .pi{display:inline-block;width:49%;vertical-align:top;margin-right:1%}.pair .pi span{display:block;font-size:.75rem;color:var(--sub);text-align:center}.grid:has(.pair){grid-template-columns:repeat(auto-fill,minmax(420px,1fr))}.gs:has(.pair){grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}@media(max-width:700px){.grid:has(.pair),.gs:has(.pair){grid-template-columns:1fr}}
 </style></head><body><main>
 <h1>Colne 画面デザイン案</h1>
 <p>ご確認いただきたいのは次の3点です。上から順に、おすすめを1つずつ載せています。</p>
@@ -43,6 +43,7 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <details><summary>白フチあり／なしの比較</summary>
 <div class="two" style="margin-top:10px"><figure style="margin:0"><img src="yoko_fuchi.jpg" alt=""><p class="cap">白フチあり</p></figure><figure style="margin:0"><img src="yoko_nofuchi.jpg" alt=""><p class="cap">白フチなし</p></figure></div></details>
 <h3 style="margin:1.4em 0 .4em">横動画：10案</h3>
+<p class="cap">どの案も、左が白フチあり、右が白フチなしです。</p>
 <div class="grid" id="gy"></div>
 <h3 style="margin:1.4em 0 .4em">ショート：10案</h3>
 <p class="cap">ショートは背景のぼかしを横動画より2段階強くしています。</p>
@@ -96,7 +97,7 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <script>
 const P=[["D01","紺×金（おすすめ）","紺は親しみ、黒は強さ。黄色の字は暗い地で読みやすい"],["D02","黒×金・二重枠","黒は権威の印象。赤は使わない"],["D03","紺×水色","青は集中を高め、落ち着かせる"],["D04","白×黄の2色だけ","色の数を2つほどに減らすと目に入りやすい"],["D05","紺×金＋緑の案内","登録の案内は緑が向く"],["D06","黒×黄の左帯","黄色は話しかけやすさの色"],["D07","飾りなし・太字","読みやすい字ほど正しいと受け取られやすい"],["D08","謎かけの字幕","？で終わる見出しは反応が増える"],["D09","Colne を大きく","顔があると注目されやすい"],["D10","続きは note","途中で終わった話は続きが気になる"]];
 const LP=[["01","経済ニュース型：紺の帯・明朝の見出し"],["02","経済ニュース型：えんじの左帯"],["05","図解型：青の枠・水色の蛍光ペン（前回のおすすめ）"],["06","図解型：緑の枠"],["07","図解型：紫の枠・ピンクの字"],["08","図解型：コーラルの枠"],["09","図解型：水色の地・シアンの枠"],["10","速報型：赤の帯"],["11","速報型：黒の帯・赤い線"],["12","速報型：紺×赤"],["13","ミニマル型：枠なし"],["14","ミニマル型：ティールの左帯"],["16","ミニマル型：グレーの細枠"],["19","Colne型：白・紺の上線"],["20","色に意味を持たせる型"]];
-for(const [k,id] of [["y","ly"],["s","ls"]]){const g=document.getElementById(id);for(const [c,n] of LP){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="${k}_L${c}.jpg" alt=""><figcaption><b>明${c}</b> ${n}</figcaption></figure>`)}}
-for(const [k,id] of [["y","gy"],["s","gs"]]){const g=document.getElementById(id);for(const [c,n,w] of P){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="${k}_${c}.jpg" alt=""><figcaption><b>${c} ${n}</b><br>${k==="y"?w:""}</figcaption></figure>`)}}
+for(const [k,id] of [["y","ly"],["s","ls"]]){const g=document.getElementById(id);for(const [c,n] of LP){g.insertAdjacentHTML('beforeend',`<figure class="pair"><div class="pi"><img loading="lazy" src="${k}_L${c}.jpg" alt=""><span>白フチあり</span></div><div class="pi"><img loading="lazy" src="${k}_L${c}_0.jpg" alt=""><span>白フチなし</span></div><figcaption><b>明${c}</b> ${n}</figcaption></figure>`)}}
+for(const [k,id] of [["y","gy"],["s","gs"]]){const g=document.getElementById(id);for(const [c,n,w] of P){g.insertAdjacentHTML('beforeend',`<figure class="pair"><div class="pi"><img loading="lazy" src="${k}_${c}.jpg" alt=""><span>白フチあり</span></div><div class="pi"><img loading="lazy" src="${k}_${c}_0.jpg" alt=""><span>白フチなし</span></div><figcaption><b>${c} ${n}</b><br>${k==="y"?w:""}</figcaption></figure>`)}}
 </script>
 </body></html>
