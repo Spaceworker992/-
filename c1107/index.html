@@ -43,32 +43,42 @@ details{margin-top:10px}summary{cursor:pointer;color:var(--acc);font-weight:bold
 <h3 style="margin:1.4em 0 .4em">横動画：10案</h3>
 <div class="grid" id="gy"></div>
 <h3 style="margin:1.4em 0 .4em">ショート：10案</h3>
+<p class="cap">ショートは背景のぼかしを横動画より2段階強くしています。</p>
 <div class="grid gs" id="gs"></div>
+<h3 style="margin:1.8em 0 .4em">明るい案（白い地のスライド）</h3>
+<p class="cap">前に作った配色のうち、白い地の15案です。並びと右下の案内（明るい版）は、上の黒ベースの案と同じにしています。番号は前の見本と同じです。05（青い枠・水色の蛍光ペン）は、前回おすすめした案です。赤を多く使う案（01・10・12）は、赤で安っぽく見えやすいという知見があります（D-Labo）。</p>
+<h4 style="margin:1em 0 .3em">横動画</h4>
+<div class="grid" id="ly"></div>
+<h4 style="margin:1em 0 .3em">ショート</h4>
+<div class="grid gs" id="ls"></div>
 </div>
 
 <h2>2. 右下の案内（X・note・ホームページ）</h2>
 <div class="card">
 <p>3つの案内を1つずつ切り替えて表示します。本番では30秒ごとに切り替えます（見本は4秒ごと）。</p>
 <div class="two">
-<figure style="margin:0"><video src="../m1107/cta_final_dark.mp4" controls muted loop playsinline preload="metadata"></video><p class="cap"><span class="tag">おすすめ</span>暗い版（黒×金）：スライドと同じ黒ベースなので、画面になじみます。</p></figure>
-<figure style="margin:0"><video src="../m1107/cta_final_light.mp4" controls muted loop playsinline preload="metadata"></video><p class="cap">明るい版：案内が目立ちますが、黒い画面の中で白い枠が浮きます。</p></figure>
+<figure style="margin:0"><video controls muted loop playsinline preload="metadata" poster="cta_dark_poster.jpg"><source src="cta_dark.mp4" type="video/mp4"></video><p class="cap"><span class="tag">おすすめ</span>暗い版（黒×金）：スライドと同じ黒ベースなので、画面になじみます。</p></figure>
+<figure style="margin:0"><video controls muted loop playsinline preload="metadata" poster="cta_light_poster.jpg"><source src="cta_light.mp4" type="video/mp4"></video><p class="cap">明るい版：案内が目立ちますが、黒い画面の中で白い枠が浮きます。</p></figure>
 </div>
 <p class="cap">文言：X「いま Colne が気にしている相場は？」／note「ニュースの“続き”は note で」／ホームページ「Colne ってどんな人？」</p>
 </div>
 
 <h2>3. 背景のぼかし方</h2>
 <div class="card">
-<video src="blur_ref_v3.mp4" controls playsinline preload="metadata"></video>
+<video controls playsinline preload="metadata" poster="blur_ref_v4_poster.jpg"><source src="blur_ref_v4.mp4" type="video/mp4"></video>
+<p class="cap">再生できないときは <a href="blur_ref_v4.mp4" style="color:#f6b73c">こちらから動画だけを開く</a></p>
 <ul>
 <li>背景は明るい朝焼けです。冒頭は「どうも、Colne です」まで、くっきり見せます。</li>
 <li>その後、約4秒かけて背景をぼかします。本編ではスライドが読みやすくなります。</li>
 <li>本編が終わり、案内に入る所から、約4秒かけてくっきりに戻します。案内はここから5秒ごとに切り替えます。</li>
-<li>この見本は、冒頭の45秒と最後の36秒をつないだものです。声は語尾まで発音されるように作り直しています。</li>
+<li>この見本は、冒頭の45秒と最後の37秒をつないだものです。声は語尾まで発音されるように作り直し、速さは1.08倍です。</li>
 </ul>
 </div>
 </main>
 <script>
 const P=[["D01","紺×金（おすすめ）","紺は親しみ、黒は強さ。黄色の字は暗い地で読みやすい"],["D02","黒×金・二重枠","黒は権威の印象。赤は使わない"],["D03","紺×水色","青は集中を高め、落ち着かせる"],["D04","白×黄の2色だけ","色の数を2つほどに減らすと目に入りやすい"],["D05","紺×金＋緑の案内","登録の案内は緑が向く"],["D06","黒×黄の左帯","黄色は話しかけやすさの色"],["D07","飾りなし・太字","読みやすい字ほど正しいと受け取られやすい"],["D08","謎かけの字幕","？で終わる見出しは反応が増える"],["D09","Colne を大きく","顔があると注目されやすい"],["D10","続きは note","途中で終わった話は続きが気になる"]];
+const LP=[["01","経済ニュース型：紺の帯・明朝の見出し"],["02","経済ニュース型：えんじの左帯"],["05","図解型：青の枠・水色の蛍光ペン（前回のおすすめ）"],["06","図解型：緑の枠"],["07","図解型：紫の枠・ピンクの字"],["08","図解型：コーラルの枠"],["09","図解型：水色の地・シアンの枠"],["10","速報型：赤の帯"],["11","速報型：黒の帯・赤い線"],["12","速報型：紺×赤"],["13","ミニマル型：枠なし"],["14","ミニマル型：ティールの左帯"],["16","ミニマル型：グレーの細枠"],["19","Colne型：白・紺の上線"],["20","色に意味を持たせる型"]];
+for(const [k,id] of [["y","ly"],["s","ls"]]){const g=document.getElementById(id);for(const [c,n] of LP){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="${k}_L${c}.jpg" alt=""><figcaption><b>明${c}</b> ${n}</figcaption></figure>`)}}
 for(const [k,id] of [["y","gy"],["s","gs"]]){const g=document.getElementById(id);for(const [c,n,w] of P){g.insertAdjacentHTML('beforeend',`<figure><img loading="lazy" src="${k}_${c}.jpg" alt=""><figcaption><b>${c} ${n}</b><br>${k==="y"?w:""}</figcaption></figure>`)}}
 </script>
 </body></html>
